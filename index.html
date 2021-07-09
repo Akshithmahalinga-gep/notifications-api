@@ -79,19 +79,19 @@
 
     var supplierChannel = pusher.subscribe('Supplier');
     supplierChannel.bind('notification', function(data) {
-      alert(JSON.stringify(data));
+      alert(data);
     });
 
     var buyerChannel = pusher.subscribe('Buyer');
     buyerChannel.bind('notification', function(data) {
-      alert(JSON.stringify(data));
+      alert(data);
     });
 
 
     var announcementsChannel = pusher.subscribe('Announcements');
     announcementsChannel.unbind('my-event');
     announcementsChannel.bind('announcement', function(data) {
-      alert(JSON.stringify(data));
+      alert(data);
     }) 
     </script>
 </body>
