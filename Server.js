@@ -16,7 +16,7 @@ const db = dbV1.connectToDB();
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
     console.log("connecting to db successful, launching server...")
-    var port = 3000;
+    var port = Process.env.PORT || 80;
     app.listen(port, () => {
     console.log(`server started on port ${port}`);
     dbV1.setUpWatch(db);
