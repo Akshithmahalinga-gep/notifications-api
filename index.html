@@ -45,7 +45,7 @@
           //  notification.date = $("#tag").val();
            $.ajax({
             type: "POST",
-            url: "http://localhost:3000/create-notification",
+            url: "https://notification-backend-techathon.herokuapp.com/create-notification",
             data: notification
            }).then(alert(`notification sent`));
         }
