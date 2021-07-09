@@ -109,17 +109,32 @@ router.post('/notifications', async (req, res) => {
     res.status(200).send(JSON.stringify(result));
 })
 
-router.post('/get-notification', async(req, res) => {
+router.post('/get-notification', async (req, res) => {
     var notif_id = req.body.notif_id;
-     
+    var user_id = req.body.user_id;
+
+    var user = await User.findById(user_id, function (err) {
+        if (err) {
+            console.log("Getting user failed");
+        }
+    });
+
+    var totalNotifs = user.notifications.length;
+    var pages = Math.ceil(totalNotifs/10);
     var notification = await Notification.findById(notif_id);
 
-    if(notification == null) {
-        res.status(404).send({"message" : `The requested notification id is invalid or doesn't exists`});
+    var result = {
+        notification: notification,
+        pages: pages
+    }
+
+    if (notification == null) {
+        res.status(404).send({ "message": `The requested notification id is invalid or doesn't exists` });
     } else {
-        res.status(200).send(JSON.stringify(notification));
+        res.status(200).send(JSON.stringify(result));
     }
 });
+
 
 router.post('/clear-notification', async(req, res) => {
     var user_id = req.body.user_id;
