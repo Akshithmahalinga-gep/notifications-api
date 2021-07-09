@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>My First Node App</title>
+  <title>Notification Pusher</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
     integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
@@ -13,10 +13,10 @@
     integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
     crossorigin="anonymous"></script>
   <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/site.webmanifest">
 
 </head>
 
@@ -24,13 +24,16 @@
   <div class="container">
     <br>
     <div class="jumbotron">
-      <h1 class="display-4">Send Notification</h1>
+      <h1 class="display-4">Create a Notification</h1>
       <br>
-      <input id="title" class="form-control" placeholder="Title">
+      <label for="title">Title</label>
+      <input id="title" class="form-control" placeholder="Notification title goes here...">
       <br>
-      <textarea id="body" class="form-control" placeholder="Notification"></textarea>
+      <label for="body">Title</label>
+      <textarea id="body" class="form-control" placeholder="Notification Body goes here..."></textarea>
       <br>
-      <input id="tag" class="form-control" placeholder="tag">
+      <label for="tag">Tag</label>
+      <input id="tag" class="form-control" placeholder="Notification tag goes here...">
       <div class="form-control" style="margin-top: 10px;">
         <label for="usertype">Select Recepients</label>
         <select name="usertype" id="usertype">
@@ -42,7 +45,7 @@
         <label for="isAnnouncement">Send as an Announcement?</label>
         <input type="checkbox" name="isAnnouncement" id="isAnnouncement">
       </div>
-      <button id="send" onclick="addNotification()" class="btn btn-success" style="margin: 5px">Send</button>
+      <button id="send" onclick="addNotification()" class="btn btn-primary" style="margin: 5px">Send</button>
     </div>
   </div>
   <script>
