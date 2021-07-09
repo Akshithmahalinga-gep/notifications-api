@@ -78,13 +78,11 @@
     });
 
     var supplierChannel = pusher.subscribe('Supplier');
-    supplierChannel.unbind('my-event');
     supplierChannel.bind('notification', function(data) {
       alert(JSON.stringify(data));
     });
 
     var buyerChannel = pusher.subscribe('Buyer');
-    supplierChannel.unbind('my-event')
     buyerChannel.bind('notification', function(data) {
       alert(JSON.stringify(data));
     });
